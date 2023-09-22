@@ -29,3 +29,6 @@ class Reserva(models.Model):
     comentario = models.TextField(
         verbose_name='Comentário'
     )
+    
+    def __str__(self) -> str:
+        return f'Reserva {self.codigo} - Anúncio: {self.anuncio}'

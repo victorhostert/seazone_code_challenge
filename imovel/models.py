@@ -37,3 +37,6 @@ class Imovel(models.Model):
         verbose_name='Data e Hora da Última Atualização',
         auto_now=True,
     )
+    
+    def __str__(self) -> str:
+        return f'Código do Imóvel: {self.codigo}'

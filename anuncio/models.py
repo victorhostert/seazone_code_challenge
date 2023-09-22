@@ -27,3 +27,6 @@ class Anuncio(models.Model):
         verbose_name='Data e Hora da Última Atualização',
         auto_now=True,
     )
+    
+    def __str__(self) -> str:
+        return f'{self.plataforma_nome} - Imóvel Nº {self.imovel.pk}'
