@@ -53,3 +53,9 @@ Os endpoints disponíveis são:
     "reserva": "http://localhost:8000/api/v1/reserva/",
 }
 ```
+
+Caso queira rodar os testes, o comando é:
+
+```bash
+$ python manage.py test
+```
