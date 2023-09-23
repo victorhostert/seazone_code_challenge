@@ -21,7 +21,7 @@ class Migration(migrations.Migration):
                 ('check_in', models.DateField(verbose_name='Data de Check-in')),
                 ('check_out', models.DateField(verbose_name='Data de Check-out')),
                 ('preco', models.DecimalField(decimal_places=2, max_digits=10, verbose_name='Preço Total')),
-                ('comentario', models.TextField(verbose_name='Comentário')),
+                ('comentario', models.TextField(verbose_name='Comentário', null=True, blank=True)),
                 ('anuncio', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='anuncio.anuncio', verbose_name='Anúncio')),
             ],
         ),

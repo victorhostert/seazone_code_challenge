@@ -27,7 +27,9 @@ class Reserva(models.Model):
         max_digits=10,
     )
     comentario = models.TextField(
-        verbose_name='Comentário'
+        verbose_name='Comentário',
+        null=True,
+        blank=True
     )
     
     def __str__(self) -> str:
