@@ -71,8 +71,6 @@ class AnuncioTestCase(APITestCase):
                 'comentario': '', 
             }
         )
-        print('aaaaaaaaaaaaaaaaaaaaaaaaaaa')
-        print(response.content)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
     
     def test_atualizacao_reserva(self):
