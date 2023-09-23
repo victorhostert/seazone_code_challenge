@@ -35,6 +35,20 @@ class ImovelTestCase(APITestCase):
             f'/api/v1/imovel/{imovel_pk}/'
         )
         self.assertEqual(response.status_code, status.HTTP_200_OK)
+    
+    def test_criar_imovel_novo(self):
+        """Verifica a possibilidade de criar novos imóveis"""
+        response = self.client.post(
+            '/api/v1/imovel/',
+            {
+                'limite': 2,
+                'qntd_banheiro': 1,
+                'animais': True,
+                'valor_limpeza': 100.00,
+                'data_ativacao': '2023-09-11'
+            }
+        )
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         
     def test_atualizacao_imovel(self):
         """Verifica se é possível atualizar um imóvel"""

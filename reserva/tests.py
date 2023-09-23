@@ -59,6 +59,22 @@ class AnuncioTestCase(APITestCase):
 
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         
+    def test_criar_reserva_novo(self):
+        """Verifica a possibilidade de criar novas reservas"""
+        response = self.client.post(
+            '/api/v1/reserva/',
+            {
+                'anuncio': 1,
+                'check_in': '2023-01-02',
+                'check_out': '2023-01-03',
+                'preco': 100.00,
+                'comentario': '', 
+            }
+        )
+        print('aaaaaaaaaaaaaaaaaaaaaaaaaaa')
+        print(response.content)
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+    
     def test_atualizacao_reserva(self):
         """Verifica se é possível atualizar uma reserva (Não deve ser possível)"""
         response = self.client.patch(

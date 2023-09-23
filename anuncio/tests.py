@@ -26,6 +26,18 @@ class AnuncioTestCase(APITestCase):
         )
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         
+    def test_criar_anuncio_novo(self):
+        """Verifica a possibilidade de criar novos anúncios"""
+        response = self.client.post(
+            '/api/v1/anuncio/',
+            {
+                'imovel': 1,
+                'plataforma_nome': 'Teste',
+                'plataforma_taxa': 0.15,
+            } 
+        )
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+    
     def test_atualizacao_anuncio(self):
         """Verifica se é possível atualizar um anúncio"""
         anuncio_pk = Anuncio.objects.first().pk
